@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">title</th>
+      <th scope="col">DueDate</th>
+      <th scope="col">Buttons</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for todo in todos %}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{todo.title}}</td>
+      <td>{{todo.due_date}}</td>
+      <td>@mdo</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
