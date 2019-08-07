@@ -22,7 +22,7 @@ def create(request):
     return redirect('/todos/') 
 
 def index(request):
-    todos = Todo.objects.all()
+    todos = Todo.objects.order_by('due_date').all()
     context = {
         'todos': todos,
     }
