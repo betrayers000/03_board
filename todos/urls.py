@@ -6,5 +6,7 @@ urlpatterns = [
     path('new/', views.new),
     path('create/', views.create),
     # for Read
-    path('', views.index)
+    path('', views.index),
+    # for Read detail
+    path('<int:todo_id>/', views.detail),
 ]
