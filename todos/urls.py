@@ -9,4 +9,9 @@ urlpatterns = [
     path('', views.index),
     # for Read detail
     path('<int:todo_id>/', views.detail),
+    # for update
+    path('<int:todo_id>/edit/', views.edit),
+    path('<int:todo_id>/update/', views.update),
+    # for delete
+    path('<int:todo_id>/delete/', views.delete),
 ]

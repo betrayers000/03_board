@@ -6,8 +6,8 @@
   <hr class="my-4">
   <p>{{todo.due_date}}</p>
   <p class="lead">
-    <a class="btn btn-warning btn-lg" href="/todos/" role="button">수정</a>
-    <a class="btn btn-danger btn-lg" href="/todos/" role="button">삭제</a>
+    <a class="btn btn-warning btn-lg" href="/todos/{{todo.id}}/edit/" role="button">수정</a>
+    <a class="btn btn-danger btn-lg" href="/todos/{{todo.id}}/delete/" role="button">삭제</a>
   </p>
 </div>
 {% endblock %}

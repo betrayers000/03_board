@@ -35,3 +35,28 @@ def detail(request, todo_id):
         'todo': todo,
     }
     return render(request, 'detail.html', context)
+
+
+def delete(request, todo_id):
+    todo = Todo.objects.all().get(id=todo_id)
+    todo.delete()
+    return render(request, 'delete.html')
+
+def edit(request, todo_id):
+    todo = Todo.objects.all().get(id=todo_id)
+    context = {
+        'todo': todo,
+    }
+    return render(request, 'edit.html', context)
+
+def update(request, todo_id):
+    todo = Todo.objects.all().get(id=todo_id)
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+    due_date = request.GET.get('due-date')
+    
+    todo.title = title
+    todo.content = content
+    todo.due_date = due_date
+    todo.save()
+    return render(request, 'update.html')
